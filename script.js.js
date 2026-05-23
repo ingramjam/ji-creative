@@ -68,7 +68,6 @@ function createProjectFilters(projects) {
         filterContainer.appendChild(btn);
     });
 }
-}
 
 function displayProjectBatch(projects) {
     const projectGrid = document.getElementById('project-grid');
