@@ -1,5 +1,6 @@
 // Load and populate projects from JSON
 let allProjects = [];
+let currentProjects = [];
 let displayedCount = 0;
 const projectsPerLoad = 6;
 
@@ -8,6 +9,7 @@ async function loadProjects() {
         const response = await fetch('data/projects.json');
         const data = await response.json();
         allProjects = data.projects;
+        currentProjects = [...allProjects];  // Initialize with all projects
         
         const projectGrid = document.getElementById('project-grid');
         if (!projectGrid) return;
@@ -19,7 +21,7 @@ async function loadProjects() {
         
         // Initial load: display first batch
         displayedCount = 0;
-        displayProjectBatch(allProjects);
+        displayProjectBatch(currentProjects);
         
         // Setup infinite scroll
         setupInfiniteScroll();
@@ -56,11 +58,11 @@ function createProjectFilters(projects) {
             // Filter and display projects
             displayedCount = 0;
             if (category === 'all') {
-                displayProjectBatch(allProjects);
+                currentProjects = [...allProjects];
             } else {
-                const filtered = allProjects.filter(p => p.category === category);
-                displayProjectBatch(filtered);
+                currentProjects = allProjects.filter(p => p.category === category);
             }
+            displayProjectBatch(currentProjects);
         });
         
         filterContainer.appendChild(btn);
@@ -113,21 +115,21 @@ function displayProjectBatch(projects) {
 }
 
 function setupInfiniteScroll() {
+    const projectGrid = document.getElementById('project-grid');
+    if (!projectGrid) return;
+    
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 // Load more projects when we reach the end
-                if (displayedCount < allProjects.length) {
-                    displayProjectBatch(allProjects);
+                if (displayedCount < currentProjects.length) {
+                    displayProjectBatch(currentProjects);
                 }
             }
         });
     });
     
-    const projectGrid = document.getElementById('project-grid');
-    if (projectGrid) {
-        observer.observe(projectGrid);
-    }
+    observer.observe(projectGrid);
 }
 
 // Expand project (placeholder for inline projects)
