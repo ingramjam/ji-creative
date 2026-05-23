@@ -5,323 +5,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Ingram III | Creative Technologist</title>
     <link rel="stylesheet" href="style.css">
-    <!-- Google Fonts for a clean, modern look -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <nav>
-        <div class="logo-container">
-            <canvas id="logoCanvas" width="60" height="60"></canvas>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="#home">JI</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#work">Work</a></li>
+                <li><a href="pages/resume.html">Resume</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="pages/resume.html" class="download-resume btn-small">Download PDF</a></li>
+            </ul>
         </div>
-        <ul class="nav-links">
-            <li><a href="#work">Work</a></li>
-            <li><a href="pages/resume.html">Resume</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#" class="download-resume">Download PDF</a></li>
-        </ul>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
             <h1>James Ingram III</h1>
-            <h2>Creative Technologist</h2>
-            <p>Bridging visual design, front-end development, and AI-driven workflows. I design and build unified digital experiences, from comprehensive HubSpot platform migrations to custom data-management web applications.</p>
-            <a href="#work" class="btn">View My Work</a>
+            <p class="subtitle">Creative Technologist</p>
+            <p class="description">Bridging visual design, front-end development, and AI-driven workflows. I design and build unified digital experiences, from comprehensive HubSpot platform migrations to custom data-management web applications.</p>
+            <a href="#work" class="btn btn-primary">View My Work</a>
         </div>
     </header>
 
     <main>
         <section id="work" class="portfolio">
-            <div class="section-header">
-                <h2>Featured Projects</h2>
-                <p>Recent developments, app builds, and design systems.</p>
-            </div>
-            
-            <div class="grid" id="project-grid">
-                <!-- Projects will be populated by JavaScript -->
+            <div class="container">
+                <div class="section-header">
+                    <h2>Featured Projects</h2>
+                    <p>Recent developments, app builds, and design systems</p>
+                </div>
+                
+                <div class="projects-grid" id="project-grid">
+                    <!-- Projects loaded by JavaScript -->
+                </div>
             </div>
         </section>
 
         <section id="resume" class="resume-section">
-            <div class="section-header">
-                <h2>Experience & Capabilities</h2>
-                <p><a href="pages/resume.html" class="text-link">View full resume →</a></p>
-            </div>
-            <div class="resume-content" id="resume-preview">
-                <!-- Resume preview will be populated by JavaScript -->
+            <div class="container">
+                <div class="section-header">
+                    <h2>Experience & Capabilities</h2>
+                    <p><a href="pages/resume.html" class="text-link">View full interactive resume →</a></p>
+                </div>
+                <div class="resume-preview" id="resume-preview">
+                    <!-- Resume preview loaded by JavaScript -->
+                </div>
             </div>
         </section>
 
         <section id="contact" class="contact">
-            <h2>Let's Connect</h2>
-            <p>Currently open to new opportunities combining design, code, and emerging tech.</p>
-            <div class="social-links">
-                <a href="mailto:ingramjam@gmail.com">ingramjam@gmail.com</a>
-                <a href="https://www.linkedin.com/in/ingramjam" target="_blank">LinkedIn</a>
+            <div class="contact-content">
+                <h2>Let's Work Together</h2>
+                <p>Open to new opportunities in design, development, and emerging technology.</p>
+                <div class="contact-links">
+                    <a href="mailto:ingramjam@gmail.com" class="btn btn-primary">Email Me</a>
+                    <a href="https://www.linkedin.com/in/ingramjam" target="_blank" class="btn btn-secondary">LinkedIn</a>
+                    <a href="https://github.com/ingramjam" target="_blank" class="btn btn-secondary">GitHub</a>
+                </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 James Ingram III. Built with code and AI.</p>
+        <p>&copy; 2026 James Ingram III. Designed and built with code.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="script.js.js"></script>
-    
-    <!-- 3D Particle Loader Logo Animation -->
-    <script>
-        const canvas = document.getElementById('logoCanvas');
-        if (canvas) {
-            const ctx = canvas.getContext('2d');
-
-            const logoImage = new Image();
-            logoImage.crossOrigin = 'anonymous';
-            logoImage.src = 'https://static.wixstatic.com/media/3451107f96a0004f8abfc34fd8481a38.wix_mp/v1/fill/w_148,h_64,al_c,usm_0.66_1.00_0.01,enc_avif,quality_auto/3451107f96a0004f8abfc34fd8481a38.wix_mp';
-
-            let particles = [];
-            const numberOfParticles = 300;
-
-            // --- Animation State Machine Timings ---
-            let animationState = 'fadeInScene';
-            let stateTimer = 0;
-            const sceneFadeDuration = 1200;
-            const swirlDuration = 1200; 
-            const holdDuration = 2000;
-            const logoRevealDuration = 1200;
-            const logoScaleUpDuration = 200; 
-            const logoSettleDuration = 200; 
-            const particleFadeDuration = 1200; 
-
-            const perspective = 150;
-            
-            const neonColors = ['#39ff14', '#00ffff', '#ff00ff', '#ff5f1f'];
-
-            class Particle {
-                constructor() {
-                    this.reset();
-                    this.baseSize = Math.random() * 1.5 + 0.1; 
-                    this.rotationSpeedX = (Math.random() - 0.5) * 0.06;
-                    this.rotationSpeedY = (Math.random() - 0.5) * 0.06;
-                    this.driftX = (Math.random() - 0.5) * 0.15;
-                    this.driftY = (Math.random() - 0.5) * 0.15;
-                    this.driftZ = (Math.random() - 0.5) * 0.15;
-                }
-
-                reset() {
-                    const angle1 = Math.random() * Math.PI * 2;
-                    const angle2 = Math.random() * Math.PI * 2;
-                    const radius = Math.random() * (canvas.width * 0.8) + (canvas.width * 0.4); 
-                    this.x = Math.cos(angle1) * radius;
-                    this.y = (Math.sin(angle1) * Math.sin(angle2) * radius) * (Math.random() * 0.3 + 0.2);
-                    this.z = Math.cos(angle2) * radius;
-                    
-                    this.lifespan = Math.random() * 150 + 100;
-                    this.initialLifespan = this.lifespan;
-                    this.baseAlpha = Math.random() * 0.7 + 0.1; 
-                    this.color = neonColors[Math.floor(Math.random() * neonColors.length)];
-                }
-
-                update() {
-                    let rotX = this.x * Math.cos(this.rotationSpeedY) - this.z * Math.sin(this.rotationSpeedY);
-                    let rotZ = this.x * Math.sin(this.rotationSpeedY) + this.z * Math.cos(this.rotationSpeedY);
-                    this.x = rotX;
-                    this.z = rotZ;
-
-                    let rotY = this.y * Math.cos(this.rotationSpeedX) - this.z * Math.sin(this.rotationSpeedX);
-                    rotZ = this.y * Math.sin(this.rotationSpeedX) + this.z * Math.cos(this.rotationSpeedX);
-                    this.y = rotY;
-                    this.z = rotZ;
-
-                    this.x += this.driftX;
-                    this.y += this.driftY;
-                    this.z += this.driftZ;
-
-                    const pullFactor = 0.0005;
-                    this.x -= this.x * pullFactor;
-                    this.y -= this.y * pullFactor;
-                    this.z -= this.z * pullFactor;
-
-                    this.lifespan--;
-                    if (this.lifespan <= 0) {
-                        this.reset();
-                    }
-                }
-
-                draw(globalAlpha) {
-                    const scale = perspective / (perspective + this.z);
-                    const projectedX = this.x * scale + canvas.width / 2;
-                    const projectedY = this.y * scale + canvas.height / 2;
-                    const projectedSize = Math.max(0, this.baseSize * scale);
-                    
-                    const lifeFactor = this.lifespan / this.initialLifespan;
-
-                    const dx = projectedX - canvas.width / 2;
-                    const dy = projectedY - canvas.height / 2;
-                    const distFromCenter = Math.sqrt(dx * dx + dy * dy);
-                    
-                    const fadeStartRadius = canvas.width / 2 * 0.7;
-                    let edgeFade = 1.0;
-
-                    if (distFromCenter > fadeStartRadius) {
-                        const fadeZoneSize = (canvas.width / 2) - fadeStartRadius;
-                        const distIntoFade = distFromCenter - fadeStartRadius;
-                        edgeFade = 1.0 - (distIntoFade / fadeZoneSize);
-                    }
-                    
-                    const finalAlpha = Math.max(0, this.baseAlpha * scale * lifeFactor * globalAlpha * edgeFade);
-
-                    ctx.fillStyle = this.color;
-                    ctx.globalAlpha = finalAlpha;
-                    
-                    ctx.beginPath();
-                    ctx.arc(projectedX, projectedY, projectedSize, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-
-            function initParticles() {
-                particles = [];
-                for (let i = 0; i < numberOfParticles; i++) {
-                    particles.push(new Particle());
-                }
-            }
-
-            function handleParticles(globalAlpha) {
-                ctx.shadowBlur = 5;
-                
-                particles.forEach(particle => {
-                    ctx.shadowColor = particle.color;
-                    particle.update();
-                    particle.draw(globalAlpha);
-                });
-
-                ctx.shadowBlur = 0;
-            }
-
-            let lastTime = 0;
-            function animate(timestamp) {
-                const deltaTime = timestamp - lastTime || 0;
-                lastTime = timestamp;
-
-                ctx.fillStyle = 'rgba(13, 13, 13, 0.6)';
-                ctx.fillRect(0, 0, canvas.width, canvas.height);
-                
-                let logoIsVisible = false;
-                let particleAlpha = 0;
-                let logoScale = 1.0; 
-
-                switch (animationState) {
-                    case 'fadeInScene':
-                        particleAlpha = stateTimer / sceneFadeDuration;
-                        if (stateTimer > sceneFadeDuration) {
-                            stateTimer = 0;
-                            animationState = 'swirl';
-                        }
-                        break;
-                    case 'swirl':
-                        particleAlpha = 1.0;
-                        if (stateTimer > swirlDuration) {
-                            stateTimer = 0;
-                            animationState = 'revealLogo';
-                        }
-                        break;
-                    case 'revealLogo':
-                        particleAlpha = 1.0;
-                        logoIsVisible = true;
-                        logoScale = 1.0;
-                        if (stateTimer > logoRevealDuration) {
-                            stateTimer = 0;
-                            animationState = 'scaleUpLogo';
-                        }
-                        break;
-                    case 'scaleUpLogo':
-                        particleAlpha = 1.0;
-                        logoIsVisible = true;
-                        logoScale = 1.0 + (stateTimer / logoScaleUpDuration) * 0.1;
-                        if (stateTimer > logoScaleUpDuration) {
-                            stateTimer = 0;
-                            animationState = 'settleLogo';
-                        }
-                        break;
-                    case 'settleLogo':
-                        particleAlpha = 1.0;
-                        logoIsVisible = true;
-                        logoScale = 1.1 - (stateTimer / logoSettleDuration) * 0.1;
-                        if (stateTimer > logoSettleDuration) {
-                            stateTimer = 0;
-                            animationState = 'fadeOutParticles';
-                        }
-                        break;
-                    case 'fadeOutParticles':
-                        logoIsVisible = true;
-                        logoScale = 1.0;
-                        particleAlpha = 1.0 - (stateTimer / particleFadeDuration);
-                        if (stateTimer > particleFadeDuration) {
-                            stateTimer = 0;
-                            animationState = 'holdLogo';
-                        }
-                        break;
-                    case 'holdLogo':
-                        logoIsVisible = true;
-                        logoScale = 1.0;
-                        particleAlpha = 0;
-                        if (stateTimer > holdDuration) {
-                            stateTimer = 0;
-                            animationState = 'fadeOutLogo';
-                        }
-                        break;
-                    case 'fadeOutLogo':
-                        logoIsVisible = true;
-                        logoScale = 1.0;
-                        if (stateTimer > sceneFadeDuration) {
-                            stateTimer = 0;
-                            animationState = 'fadeInScene';
-                        }
-                        break;
-                }
-                
-                if (particleAlpha > 0) {
-                    handleParticles(particleAlpha);
-                }
-
-                if (logoIsVisible) {
-                    ctx.save();
-
-                    if (animationState === 'fadeOutLogo') {
-                        ctx.globalAlpha = 1.0 - (stateTimer / sceneFadeDuration);
-                    } else {
-                        ctx.globalAlpha = 1.0;
-                    }
-
-                    const scaledWidth = logoImage.width * logoScale;
-                    const scaledHeight = logoImage.height * logoScale;
-                    const x = (canvas.width - scaledWidth) / 2;
-                    const y = (canvas.height - scaledHeight) / 2;
-                    
-                    if (animationState === 'revealLogo') {
-                        const revealWidth = scaledWidth * (stateTimer / logoRevealDuration);
-                        ctx.beginPath();
-                        ctx.rect(x, y, revealWidth, scaledHeight);
-                        ctx.clip();
-                    }
-                    
-                    ctx.drawImage(logoImage, x, y, scaledWidth, scaledHeight);
-
-                    ctx.restore();
-                }
-                
-                ctx.globalAlpha = 1.0; 
-                stateTimer += deltaTime;
-                requestAnimationFrame(animate);
-            }
-
-            logoImage.onload = () => {
-                initParticles();
-                animate(0);
-            };
-        }
-    </script>
 </body>
 </html>

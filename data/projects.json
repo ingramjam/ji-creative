@@ -9,7 +9,7 @@
       "year": "2023",
       "relatedSkills": ["Web Development & CMS"],
       "hasDetailPage": true,
-      "link": "/pages/project-kic-games.html"
+      "link": "pages/project-kic-games.html"
     },
     {
       "id": "bronco-mustang-manager",
@@ -20,7 +20,7 @@
       "year": "2022",
       "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
       "hasDetailPage": true,
-      "link": "/pages/project-bronco-padres.html"
+      "link": "pages/project-bronco-padres.html"
     },
     {
       "id": "hubspot-migration",
@@ -31,7 +31,7 @@
       "year": "2023",
       "relatedSkills": ["Web Development & CMS"],
       "hasDetailPage": true,
-      "link": "/pages/project-hubspot-migration.html"
+      "link": "pages/project-hubspot-migration.html"
     },
     {
       "id": "ucsd-concept",
@@ -42,7 +42,7 @@
       "year": "2015",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-ucsd-concept.html"
+      "link": "pages/project-ucsd-concept.html"
     },
     {
       "id": "kick-it-california",
@@ -53,7 +53,7 @@
       "year": "2021",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-kick-it-california.html"
+      "link": "pages/project-kick-it-california.html"
     },
     {
       "id": "ak-delivered",
@@ -64,7 +64,7 @@
       "year": "2020",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-ak-delivered.html"
+      "link": "pages/project-ak-delivered.html"
     },
     {
       "id": "kick-it-quit-kit",
@@ -75,7 +75,7 @@
       "year": "2021",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-kick-it-quit-kit.html"
+      "link": "pages/project-kick-it-quit-kit.html"
     },
     {
       "id": "ucsd-admissions",
@@ -86,7 +86,7 @@
       "year": "2015",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-ucsd-admissions.html"
+      "link": "pages/project-ucsd-admissions.html"
     },
     {
       "id": "brown-bag-sandwich",
@@ -97,7 +97,7 @@
       "year": "2016",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-brown-bag.html"
+      "link": "pages/project-brown-bag.html"
     },
     {
       "id": "mcdonalds-fridge",
@@ -108,7 +108,7 @@
       "year": "2018",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-mcdonalds-fridge.html"
+      "link": "pages/project-mcdonalds-fridge.html"
     },
     {
       "id": "tupe-gems-logo",
@@ -119,7 +119,7 @@
       "year": "2017",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-tupe-gems.html"
+      "link": "pages/project-tupe-gems.html"
     },
     {
       "id": "intuit-pex",
@@ -130,7 +130,7 @@
       "year": "2021",
       "relatedSkills": ["Brand & Visual Design", "Web Development & CMS"],
       "hasDetailPage": true,
-      "link": "/pages/project-intuit-pex.html"
+      "link": "pages/project-intuit-pex.html"
     },
     {
       "id": "edaw-aecom",
@@ -141,7 +141,7 @@
       "year": "2018",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-edaw-aecom.html"
+      "link": "pages/project-edaw-aecom.html"
     },
     {
       "id": "killjoy",
@@ -152,7 +152,7 @@
       "year": "2019",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-killjoy.html"
+      "link": "pages/project-killjoy.html"
     },
     {
       "id": "project-green",
@@ -163,7 +163,7 @@
       "year": "2020",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-project-green.html"
+      "link": "pages/project-project-green.html"
     },
     {
       "id": "volunteer-work",
@@ -174,7 +174,7 @@
       "year": "2021",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-volunteer-work.html"
+      "link": "pages/project-volunteer-work.html"
     },
     {
       "id": "logos",
@@ -186,7 +186,7 @@
       "year": "2020",
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
-      "link": "/pages/project-logos.html"
+      "link": "pages/project-logos.html"
     },
     {
       "id": "211-kic-rsvp",
@@ -197,7 +197,7 @@
       "year": "2021",
       "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
       "hasDetailPage": true,
-      "link": "/pages/project-211-kic-rsvp.html"
+      "link": "pages/project-211-kic-rsvp.html"
     },
     {
       "id": "titos-taco-stand",
@@ -208,7 +208,7 @@
       "year": "2020",
       "relatedSkills": ["Web Development & CMS"],
       "hasDetailPage": true,
-      "link": "/pages/project-titos-taco-stand.html"
+      "link": "pages/project-titos-taco-stand.html"
     },
     {
       "id": "the-weed-drag",
@@ -219,7 +219,7 @@
       "year": "2021",
       "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
       "hasDetailPage": true,
-      "link": "/pages/project-the-weed-drag.html"
+      "link": "pages/project-the-weed-drag.html"
     },
     {
       "id": "creative-gym",
@@ -230,7 +230,7 @@
       "year": "2022",
       "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
       "hasDetailPage": true,
-      "link": "/pages/project-creative-gym.html"
+      "link": "pages/project-creative-gym.html"
     },
     {
       "id": "kic-activities",
@@ -241,7 +241,7 @@
       "year": "2021",
       "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
       "hasDetailPage": true,
-      "link": "/pages/project-kic-activities.html"
+      "link": "pages/project-kic-activities.html"
     }
   ]
 }
