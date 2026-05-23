@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         renderSkills();
         renderExperience();
         renderEducation();
+        renderGitHubRepos();
         renderProjects();
         setupPDFExport();
     }
@@ -108,6 +109,32 @@ function renderEducation() {
         `;
         
         container.appendChild(item);
+    });
+}
+
+// Render GitHub repos
+function renderGitHubRepos() {
+    const container = document.getElementById('github-repos');
+    if (!container || !resumeData.featured_repos) return;
+    
+    container.innerHTML = '';
+    
+    resumeData.featured_repos.forEach(repo => {
+        const card = document.createElement('div');
+        card.className = 'repo-card';
+        
+        const topicsHTML = repo.topics
+            .map(topic => `<span class="repo-topic">${topic}</span>`)
+            .join('');
+        
+        card.innerHTML = `
+            <h3>${repo.name}</h3>
+            <p>${repo.description}</p>
+            <div class="repo-topics">${topicsHTML}</div>
+            <a href="${repo.url}" target="_blank" class="repo-link">View on GitHub →</a>
+        `;
+        
+        container.appendChild(card);
     });
 }
 

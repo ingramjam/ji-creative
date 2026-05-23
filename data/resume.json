@@ -106,8 +106,29 @@
     }
   ],
   "contact": {
-    "instagram": "https://www.instagram.com/trashimake",
+    "github": "https://github.com/ingramjam",
     "linkedin": "https://www.linkedin.com/in/ingramjam/",
-    "email": "Contact via your-email@example.com"
-  }
+    "instagram": "https://www.instagram.com/trashimake",
+    "email": "ingramjam@gmail.com"
+  },
+  "featured_repos": [
+    {
+      "name": "Ji Creative Design Portfolio",
+      "description": "Modern portfolio site with project filtering and lazy loading",
+      "url": "https://github.com/ingramjam/ji-creative",
+      "topics": ["HTML", "CSS", "JavaScript", "Portfolio"]
+    },
+    {
+      "name": "Bronco Sports Manager",
+      "description": "Custom data-tracking application for youth sports management",
+      "url": "https://github.com/ingramjam/bronco-manager",
+      "topics": ["JavaScript", "Database", "Web App"]
+    },
+    {
+      "name": "HubSpot Platform Extensions",
+      "description": "Custom modules and workflows for HubSpot CMS implementations",
+      "url": "https://github.com/ingramjam/hubspot-extensions",
+      "topics": ["HubSpot", "JavaScript", "Integration"]
+    }
+  ]
 }
