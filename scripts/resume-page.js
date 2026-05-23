@@ -1,7 +1,6 @@
 // Resume Page Functionality
 let resumeData = null;
 let projectsData = null;
-let currentFilter = null;
 
 // Initialize resume page
 document.addEventListener('DOMContentLoaded', async () => {
@@ -9,9 +8,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     await loadProjectsData();
     
     if (resumeData) {
-        renderFilterButtons();
-        renderExperience();
         renderSkills();
+        renderExperience();
         renderEducation();
         renderProjects();
         setupPDFExport();
@@ -43,76 +41,6 @@ async function loadProjectsData() {
     }
 }
 
-// Render filter buttons
-function renderFilterButtons() {
-    const container = document.getElementById('skill-filters');
-    if (!container) return;
-    
-    container.innerHTML = '';
-    
-    // Add "All" button
-    const allBtn = document.createElement('button');
-    allBtn.className = 'filter-btn active';
-    allBtn.textContent = 'All Skills';
-    allBtn.addEventListener('click', () => filterBySkill(null, allBtn));
-    container.appendChild(allBtn);
-    
-    // Add skill category buttons
-    Object.keys(resumeData.skills).forEach(skill => {
-        const btn = document.createElement('button');
-        btn.className = 'filter-btn';
-        btn.textContent = skill;
-        btn.addEventListener('click', () => filterBySkill(skill, btn));
-        container.appendChild(btn);
-    });
-}
-
-// Filter by skill
-function filterBySkill(skill, buttonElement) {
-    currentFilter = skill;
-    
-    // Update button states
-    document.querySelectorAll('.filter-btn').forEach(btn => {
-        btn.classList.remove('active');
-    });
-    buttonElement.classList.add('active');
-    
-    // Re-render experience
-    renderExperience(skill);
-    renderProjects(skill);
-}
-
-// Render experience section
-function renderExperience(filterSkill = null) {
-    const container = document.getElementById('experience-list');
-    if (!container) return;
-    
-    container.innerHTML = '';
-    
-    resumeData.experience.forEach(exp => {
-        // Filter by skill if specified
-        if (filterSkill && !exp.skills.includes(filterSkill)) {
-            return;
-        }
-        
-        const item = document.createElement('div');
-        item.className = 'experience-item';
-        
-        let responsibilitiesHTML = exp.responsibilities
-            .map(r => `<li>${r}</li>`)
-            .join('');
-        
-        item.innerHTML = `
-            <h3>${exp.company}</h3>
-            <div class="job-title">${exp.title}</div>
-            <div class="job-dates">${exp.location} | ${exp.startDate} – ${exp.endDate}</div>
-            <ul>${responsibilitiesHTML}</ul>
-        `;
-        
-        container.appendChild(item);
-    });
-}
-
 // Render skills section
 function renderSkills() {
     const container = document.getElementById('skills-list');
@@ -137,6 +65,32 @@ function renderSkills() {
     });
 }
 
+// Render experience section
+function renderExperience() {
+    const container = document.getElementById('experience-list');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    resumeData.experience.forEach(exp => {
+        const item = document.createElement('div');
+        item.className = 'experience-item';
+        
+        let responsibilitiesHTML = exp.responsibilities
+            .map(r => `<li>${r}</li>`)
+            .join('');
+        
+        item.innerHTML = `
+            <h3>${exp.company}</h3>
+            <div class="job-title">${exp.title}</div>
+            <div class="job-dates">${exp.location} | ${exp.startDate} – ${exp.endDate}</div>
+            <ul>${responsibilitiesHTML}</ul>
+        `;
+        
+        container.appendChild(item);
+    });
+}
+
 // Render education section
 function renderEducation() {
     const container = document.getElementById('education-list');
@@ -158,25 +112,21 @@ function renderEducation() {
 }
 
 // Render projects
-function renderProjects(filterSkill = null) {
+function renderProjects() {
     const container = document.getElementById('related-projects');
     if (!container || !projectsData) return;
     
     container.innerHTML = '';
     
-    projectsData.projects.forEach(project => {
-        // Filter by skill if specified
-        if (filterSkill && !project.relatedSkills.includes(filterSkill)) {
-            return;
-        }
-        
+    // Show first 3 projects
+    projectsData.projects.slice(0, 3).forEach(project => {
         const card = document.createElement('div');
         card.className = 'project-card';
         
         let link = project.hasDetailPage ? project.link : '../index.html#work';
         
         card.innerHTML = `
-            <div class="project-category">${project.category}</div>
+            <div class="project-category">${project.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</div>
             <h3>${project.title}</h3>
             <p>${project.description}</p>
             <a href="${link}">View Project →</a>

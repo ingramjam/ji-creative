@@ -231,6 +231,41 @@ p {
     gap: 2rem;
 }
 
+/* Project Filters */
+.project-filters {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.filter-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+    background: rgba(37, 99, 235, 0.05);
+}
+
+.filter-btn.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+}
+
 .card {
     background: white;
     border-radius: 8px;
@@ -779,18 +814,16 @@ footer {
     }
 }
 
-/* ============================================
-   RESUME PAGE STYLES
-   ============================================ */
+/* Resume Page Styles */
 .resume-page {
-    max-width: 1200px;
+    max-width: 900px;
     margin: 0 auto;
-    padding: 3rem 5%;
+    padding: 3rem 2rem;
 }
 
 .resume-header {
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
     padding-bottom: 2rem;
     border-bottom: 2px solid var(--accent);
 }
@@ -807,64 +840,14 @@ footer {
     line-height: 1.8;
 }
 
-.resume-container {
-    display: grid;
-    grid-template-columns: 250px 1fr;
-    gap: 3rem;
-    margin-bottom: 4rem;
-}
-
-/* Skill Filter Panel */
-.skill-filter-panel {
-    position: sticky;
-    top: 90px;
-    height: fit-content;
-    padding: 1.5rem;
-    background: var(--light-bg);
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.skill-filter-panel h3 {
-    margin-bottom: 1.5rem;
-    font-size: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.filter-buttons {
+.resume-content {
     display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
+    gap: 3rem;
+    margin-bottom: 3rem;
 }
 
-.filter-btn {
-    padding: 0.75rem 1rem;
-    background: transparent;
-    border: 1px solid var(--text-light);
-    border-radius: 4px;
-    color: var(--text-main);
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: left;
-    font-weight: 500;
-    font-size: 0.9rem;
-}
-
-.filter-btn:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(37, 99, 235, 0.05);
-}
-
-.filter-btn.active {
-    background: var(--accent);
-    color: white;
-    border-color: var(--accent);
-}
-
-/* Resume Main Content */
 .resume-main {
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 3rem;

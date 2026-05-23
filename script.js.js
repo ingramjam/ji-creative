@@ -1,37 +1,144 @@
 // Load and populate projects from JSON
+let allProjects = [];
+let displayedCount = 0;
+const projectsPerLoad = 6;
+
 async function loadProjects() {
     try {
         const response = await fetch('data/projects.json');
         const data = await response.json();
+        allProjects = data.projects;
         
         const projectGrid = document.getElementById('project-grid');
         if (!projectGrid) return;
         
         projectGrid.innerHTML = '';
         
-        data.projects.forEach(project => {
-            const card = document.createElement('div');
-            card.className = 'card';
-            
-            let cardHTML = `
-                <img src="${project.image}" alt="${project.title}" onerror="this.style.backgroundColor='#d3d3d3'; this.style.objectFit='cover';">
-                <div class="card-content">
-                    <h3>${project.title}</h3>
-                    <p>${project.description}</p>
-            `;
-            
-            if (project.hasDetailPage && project.link) {
-                cardHTML += `<a href="${project.link}" class="text-link">View Project →</a>`;
-            } else {
-                cardHTML += `<a href="javascript:void(0)" class="text-link">View Details →</a>`;
-            }
-            
-            cardHTML += `</div>`;
-            card.innerHTML = cardHTML;
-            projectGrid.appendChild(card);
-        });
+        // Create project category filter buttons
+        createProjectFilters(data.projects);
+        
+        // Initial load: display first batch
+        displayedCount = 0;
+        displayProjectBatch(allProjects);
+        
+        // Setup infinite scroll
+        setupInfiniteScroll();
+        
     } catch (error) {
         console.error('Error loading projects:', error);
+    }
+}
+
+function createProjectFilters(projects) {
+    const filterContainer = document.getElementById('project-filters');
+    if (!filterContainer) {
+        // Create filter container if it doesn't exist
+        const portfolioSection = document.querySelector('.portfolio');
+        if (portfolioSection) {
+            const filterDiv = document.createElement('div');
+            filterDiv.id = 'project-filters';
+            filterDiv.className = 'project-filters';
+            filterDiv.style.cssText = 'display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; margin-top: 1rem;';
+            portfolioSection.insertBefore(filterDiv, document.getElementById('project-grid'));
+        }
+    }
+    
+    const container = document.getElementById('project-filters');
+    if (!container) return;
+    
+    container.innerHTML = '';
+    
+    // Get unique categories
+    const categories = ['all', ...new Set(projects.map(p => p.category))];
+    
+    categories.forEach(category => {
+        const btn = document.createElement('button');
+        btn.className = 'filter-btn';
+        if (category === 'all') {
+            btn.classList.add('active');
+            btn.textContent = 'All Projects';
+        } else {
+            btn.textContent = category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
+        
+        btn.addEventListener('click', () => {
+            // Update active button
+            document.querySelectorAll('#project-filters .filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            // Filter and display projects
+            displayedCount = 0;
+            if (category === 'all') {
+                displayProjectBatch(allProjects);
+            } else {
+                const filtered = allProjects.filter(p => p.category === category);
+                displayProjectBatch(filtered);
+            }
+        });
+        
+        container.appendChild(btn);
+    });
+}
+
+function displayProjectBatch(projects) {
+    const projectGrid = document.getElementById('project-grid');
+    
+    // Clear grid if this is the first batch for a filter
+    if (displayedCount === 0) {
+        projectGrid.innerHTML = '';
+    }
+    
+    const batch = projects.slice(displayedCount, displayedCount + projectsPerLoad);
+    
+    batch.forEach(project => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.opacity = '0';
+        card.style.transform = 'translateY(20px)';
+        card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
+        
+        let cardHTML = `
+            <img src="${project.image}" alt="${project.title}" onerror="this.style.backgroundColor='#d3d3d3'; this.style.objectFit='cover';">
+            <div class="card-content">
+                <h3>${project.title}</h3>
+                <p>${project.description}</p>
+        `;
+        
+        if (project.hasDetailPage && project.link) {
+            cardHTML += `<a href="${project.link}" class="text-link">View Project →</a>`;
+        } else {
+            cardHTML += `<a href="javascript:void(0)" class="text-link">View Details →</a>`;
+        }
+        
+        cardHTML += `</div>`;
+        card.innerHTML = cardHTML;
+        projectGrid.appendChild(card);
+        
+        // Animate in
+        setTimeout(() => {
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+        }, 10);
+    });
+    
+    displayedCount += batch.length;
+}
+
+function setupInfiniteScroll() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Load more projects when we reach the end
+                if (displayedCount < allProjects.length) {
+                    displayProjectBatch(allProjects);
+                }
+            }
+        });
+    });
+    
+    const projectGrid = document.getElementById('project-grid');
+    if (projectGrid) {
+        observer.observe(projectGrid);
     }
 }
 
