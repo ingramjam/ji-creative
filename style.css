@@ -39,8 +39,20 @@ nav {
     z-index: 100;
 }
 
-.logo { font-weight: 800; font-size: 1.5rem; }
-.logo a { text-decoration: none; color: var(--text-main); }
+.logo-container { 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+.logo-container:hover { transform: scale(1.05); }
+.logo-container canvas { 
+    display: block; 
+    width: 60px; 
+    height: 60px;
+    vertical-align: middle;
+}
 .nav-links { list-style: none; display: flex; gap: 2rem; }
 .nav-links a { text-decoration: none; color: var(--text-main); font-weight: 600; transition: color 0.3s; }
 .nav-links a:hover { color: var(--accent); }

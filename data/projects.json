@@ -20,7 +20,7 @@
       "year": "2022",
       "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
       "hasDetailPage": true,
-      "link": "/pages/project-sports-manager.html"
+      "link": "/pages/project-bronco-padres.html"
     },
     {
       "id": "hubspot-migration",
@@ -187,6 +187,61 @@
       "relatedSkills": ["Brand & Visual Design"],
       "hasDetailPage": true,
       "link": "/pages/project-logos.html"
+    },
+    {
+      "id": "211-kic-rsvp",
+      "title": "211 KIC RSVP",
+      "category": "web-app",
+      "description": "Event registration and RSVP management system for community organization.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2021",
+      "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
+      "hasDetailPage": true,
+      "link": "/pages/project-211-kic-rsvp.html"
+    },
+    {
+      "id": "titos-taco-stand",
+      "title": "Tito's Taco Stand",
+      "category": "web-development",
+      "description": "Small business web presence and online ordering platform.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2020",
+      "relatedSkills": ["Web Development & CMS"],
+      "hasDetailPage": true,
+      "link": "/pages/project-titos-taco-stand.html"
+    },
+    {
+      "id": "the-weed-drag",
+      "title": "The Weed Drag",
+      "category": "web-app",
+      "description": "Media platform for independent content creators.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2021",
+      "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
+      "hasDetailPage": true,
+      "link": "/pages/project-the-weed-drag.html"
+    },
+    {
+      "id": "creative-gym",
+      "title": "Creative Gym",
+      "category": "web-app",
+      "description": "Online learning platform for creative professionals.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2022",
+      "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
+      "hasDetailPage": true,
+      "link": "/pages/project-creative-gym.html"
+    },
+    {
+      "id": "kic-activities",
+      "title": "KIC Activities",
+      "category": "web-app",
+      "description": "Interactive activity platform for Kick It California health program.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2021",
+      "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
+      "hasDetailPage": true,
+      "link": "/pages/project-kic-activities.html"
     }
   ]
 }

@@ -211,15 +211,18 @@ function generatePDF() {
     const element = document.getElementById('print-resume');
     
     if (typeof html2pdf !== 'undefined') {
-        const opt = {
-            margin: [0.5, 0.5, 0.5, 0.5], // inches
-            filename: 'James_Ingram_Resume.pdf',
-            image: { type: 'jpeg', quality: 0.98 },
-            html2canvas: { scale: 2, useCORS: true },
-            jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
-        };
-        
-        html2pdf().set(opt).from(element).save();
+        // Small delay to ensure content is fully populated
+        setTimeout(() => {
+            const opt = {
+                margin: [0.5, 0.5, 0.5, 0.5], // inches
+                filename: 'James_Ingram_Resume.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, useCORS: true, allowTaint: true, logging: false },
+                jsPDF: { unit: 'in', format: 'letter', orientation: 'portrait' }
+            };
+            
+            html2pdf().set(opt).from(element).save();
+        }, 100);
     } else {
         // Fallback: use print dialog
         window.print();
