@@ -1,0 +1,113 @@
+{
+  "name": "James Ingram III",
+  "title": "Creative Technologist",
+  "summary": "Bridging visual design, front-end development, and AI-driven workflows. I design and build unified digital experiences, from comprehensive HubSpot platform migrations to custom data-management web applications.",
+  "skills": {
+    "Web Development & CMS": [
+      "HubSpot Platform Architecture",
+      "WordPress to HubSpot Migration",
+      "Custom Module Engineering",
+      "Web Design & Development",
+      "CMS Strategy"
+    ],
+    "Database & Logistics": [
+      "Data & Logistics Management",
+      "Dynamic Roster Development",
+      "Tactical Diagram Design",
+      "Database Management"
+    ],
+    "AI & Emerging Tech": [
+      "Generative AI Workflows",
+      "Prompt Engineering",
+      "Multimedia Prototyping (Image/Video, Architectural Rendering)",
+      "Audio & Voiceover Synthesis (ElevenLabs, Suno AI)"
+    ],
+    "Brand & Visual Design": [
+      "End-to-End Brand Identity",
+      "Unified Communications",
+      "UI/UX Principles",
+      "Motion Graphics",
+      "Video Editing"
+    ],
+    "Tools": [
+      "HubSpot",
+      "WordPress",
+      "Figma",
+      "Adobe Creative Suite (Premiere Pro, After Effects, Illustrator)",
+      "AI Prompt Frameworks"
+    ]
+  },
+  "experience": [
+    {
+      "id": "ji-creative",
+      "company": "JI Creative Design",
+      "location": "Greater San Diego Area",
+      "title": "Lead Creative Technologist & Consultant",
+      "startDate": "Dec 2002",
+      "endDate": "Present",
+      "description": "Directing digital infrastructure overhauls and creative implementations for diverse clientele.",
+      "responsibilities": [
+        "Digital Transformation & Migration: Directed a massive digital infrastructure overhaul, successfully migrating multiple complex websites, databases, and hosting environments from WordPress to the HubSpot platform.",
+        "Brand & Web Launch: Architected, built, and launched four distinct brand websites simultaneously, engineering custom HubSpot modules to ensure seamless user experiences and backend efficiency.",
+        "AI Workflow Integration: Pioneered the use of generative AI tools for rapid project prototyping. Integrated audio synthesis, voiceover production, and image generation into the creative pipeline to dramatically reduce production times for client presentations and multimedia campaigns.",
+        "Comprehensive Brand Identity: Developed end-to-end visual concepts and brand identities for emerging businesses, including full branding packages, logos, and digital footprints for new ventures."
+      ],
+      "skills": ["Web Development & CMS", "AI & Emerging Tech", "Brand & Visual Design"]
+    },
+    {
+      "id": "moores-cancer",
+      "company": "Moores Cancer Center",
+      "location": "San Diego, CA",
+      "title": "Creative Technologist (Digital Media Specialist)",
+      "startDate": "Nov 2020",
+      "endDate": "Present",
+      "description": "Designing and implementing robust, integrated web-based systems for healthcare marketing.",
+      "responsibilities": [
+        "Systems Design & Communication Strategy: Evolved digital communication channels by designing and implementing robust, integrated web-based systems that handle dynamic multimedia content.",
+        "Workflow Optimization: Reduced system runtime and improved operational efficiency by integrating optimized digital audio, video, and alternative multimedia platforms into the organization's core communication strategies.",
+        "Data-Driven Engagement: Developed innovative digital solutions aligned with the latest technology trends to support critical healthcare marketing strategies, demonstrably increasing user engagement and customer satisfaction rates."
+      ],
+      "skills": ["Web Development & CMS", "Brand & Visual Design"]
+    },
+    {
+      "id": "isodiol",
+      "company": "Isodiol International, Inc",
+      "location": "Escondido, CA",
+      "title": "Creative Designer",
+      "startDate": "May 2019",
+      "endDate": "March 2020",
+      "description": "Managing brand content across a complex multi-entity corporate structure.",
+      "responsibilities": [
+        "Generated and oversaw brand content for the parent organization and seven subordinate entities across web design, motion graphics, video editing, and print.",
+        "Developed innovative digital solutions that aligned with emerging design trends and technologies to improve communication efficiency and maintain strict brand standards across a complex corporate structure."
+      ],
+      "skills": ["Brand & Visual Design", "Web Development & CMS"]
+    },
+    {
+      "id": "ucsd",
+      "company": "UC San Diego",
+      "location": "La Jolla, CA",
+      "title": "Senior Media Specialist",
+      "startDate": "Jan 2013",
+      "endDate": "May 2019",
+      "description": "Leading multimedia production for comprehensive marketing and communication campaigns.",
+      "responsibilities": [
+        "Conceptualized and implemented comprehensive visual plans for multi-channel marketing and communication campaigns.",
+        "Led a team of 5 in the art direction of multimedia projects, including film, photography, and audio production, consistently delivering top-notch digital materials that drove engagement."
+      ],
+      "skills": ["Brand & Visual Design"]
+    }
+  ],
+  "education": [
+    {
+      "school": "The Art Institute of California-San Diego",
+      "degree": "Bachelor of Science",
+      "field": "Graphic Design"
+    }
+  ],
+  "contact": {
+    "instagram": "https://www.instagram.com/trashimake",
+    "linkedin": "https://www.linkedin.com/in/ingramjam/",
+    "email": "Contact via your-email@example.com"
+  }
+}

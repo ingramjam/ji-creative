@@ -1,0 +1,192 @@
+{
+  "projects": [
+    {
+      "id": "kic-games",
+      "title": "KIC Games Archive",
+      "category": "web-app",
+      "description": "Interactive web games developed for Kick It California, designed to increase user engagement and health education retention.",
+      "image": "https://static.wixstatic.com/media/43bd37_5e1e6ba2c1444a70a6c06b4442096c04~mv2.png/v1/fill/w_231,h_231,al_c,q_95,usm_0.66_1.00_0.01,enc_avif,quality_auto/GASO%201.png",
+      "year": "2023",
+      "relatedSkills": ["Web Development & CMS"],
+      "hasDetailPage": true,
+      "link": "/pages/project-kic-games.html"
+    },
+    {
+      "id": "bronco-mustang-manager",
+      "title": "Bronco / Mustang Manager",
+      "category": "web-app",
+      "description": "A custom data-tracking application for youth sports management.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2022",
+      "relatedSkills": ["Web Development & CMS", "Database & Logistics"],
+      "hasDetailPage": true,
+      "link": "/pages/project-sports-manager.html"
+    },
+    {
+      "id": "hubspot-migration",
+      "title": "Enterprise HubSpot Migration",
+      "category": "web-development",
+      "description": "Architected and launched four distinct brand websites simultaneously.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2023",
+      "relatedSkills": ["Web Development & CMS"],
+      "hasDetailPage": true,
+      "link": "/pages/project-hubspot-migration.html"
+    },
+    {
+      "id": "ucsd-concept",
+      "title": "UCSD Concept",
+      "category": "print",
+      "description": "UCSD admissions packet design and brand materials.",
+      "image": "https://static.wixstatic.com/media/43bd37_f4279b29f5ef42e8aa659084c0921c2ff000.jpg/v1/fill/w_490,h_600,al_c,q_80,usm_0.33_1.00_0.00,enc_avif,quality_auto/43bd37_f4279b29f5ef42e8aa659084c0921c2ff000.jpg",
+      "year": "2015",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-ucsd-concept.html"
+    },
+    {
+      "id": "kick-it-california",
+      "title": "Kick It California Zoom Backgrounds",
+      "category": "digital-assets",
+      "description": "Custom digital backgrounds and assets for health education program.",
+      "image": "https://static.wixstatic.com/media/43bd37_4b7add25a04748eb9d850485a133a7f4~mv2.png/v1/fit/w_374,h_374,q_90,enc_avif,quality_auto/43bd37_4b7add25a04748eb9d850485a133a7f4~mv2.png",
+      "year": "2021",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-kick-it-california.html"
+    },
+    {
+      "id": "ak-delivered",
+      "title": "AK Delivered",
+      "category": "branding",
+      "description": "Brand identity and marketing materials design.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2020",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-ak-delivered.html"
+    },
+    {
+      "id": "kick-it-quit-kit",
+      "title": "Kick It Quit Kit",
+      "category": "print",
+      "description": "Downloadable educational resource for health program.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2021",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-kick-it-quit-kit.html"
+    },
+    {
+      "id": "ucsd-admissions",
+      "title": "UCSD Admissions Packet",
+      "category": "print",
+      "description": "Comprehensive admissions materials package for UC San Diego.",
+      "image": "https://static.wixstatic.com/media/43bd37_60b4c7498b184a02a65dc18711a4c2e8f000.jpg/v1/fill/w_470,h_576,al_c,lg_1,q_80,usm_0.33_1.00_0.00,enc_avif,quality_auto/43bd37_60b4c7498b184a02a65dc18711a4c2e8f000.jpg",
+      "year": "2015",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-ucsd-admissions.html"
+    },
+    {
+      "id": "brown-bag-sandwich",
+      "title": "Brown Bag Sandwich Company",
+      "category": "branding",
+      "description": "Complete brand identity and collateral design for a local sandwich shop.",
+      "image": "https://static.wixstatic.com/media/43bd37_65d94aaddace493093aabe28200f8b8a.jpg/v1/fill/w_569,h_398,al_c,q_90,enc_avif,quality_auto/43bd37_65d94aaddace493093aabe28200f8b8a.jpg",
+      "year": "2016",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-brown-bag.html"
+    },
+    {
+      "id": "mcdonalds-fridge",
+      "title": "Ronald McDonald House - Fill the Fridge",
+      "category": "campaign",
+      "description": "Marketing campaign design for nonprofit fundraising initiative.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2018",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-mcdonalds-fridge.html"
+    },
+    {
+      "id": "tupe-gems-logo",
+      "title": "TUPE GEMS Logo & Brand",
+      "category": "logo",
+      "description": "Logo design and branding system for jewelry company.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2017",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-tupe-gems.html"
+    },
+    {
+      "id": "intuit-pex",
+      "title": "Intuit People Experience Team",
+      "category": "design-system",
+      "description": "Internal design system and UI framework for Intuit product team.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2021",
+      "relatedSkills": ["Brand & Visual Design", "Web Development & CMS"],
+      "hasDetailPage": true,
+      "link": "/pages/project-intuit-pex.html"
+    },
+    {
+      "id": "edaw-aecom",
+      "title": "EDAW | AECOM",
+      "category": "branding",
+      "description": "Corporate branding and marketing materials for international landscape architecture firm.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2018",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-edaw-aecom.html"
+    },
+    {
+      "id": "killjoy",
+      "title": "Killjoy",
+      "category": "video",
+      "description": "Short film concept and execution.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2019",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-killjoy.html"
+    },
+    {
+      "id": "project-green",
+      "title": "Project Green",
+      "category": "environmental",
+      "description": "Environmental campaign with multimedia content and community engagement focus.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2020",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-project-green.html"
+    },
+    {
+      "id": "volunteer-work",
+      "title": "Volunteer Work",
+      "category": "community",
+      "description": "Pro bono creative work for nonprofit and community organizations.",
+      "image": "https://static.parastorage.com/pages/social/JI-Creative-Design.jpg",
+      "year": "2021",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-volunteer-work.html"
+    },
+    {
+      "id": "logos",
+      "title": "Logo Portfolio",
+      "category": "logo",
+      "description": "Collection of logo designs across multiple industries and styles.",
+      "image": "https://static.wixstatic.com/media/43bd37_11d0f0691c994dc6bdbc80faedf07fe4.jpg/v1/fill/w_245,h_196,al_c,q_90,enc_avif,quality_auto/43bd37_11d0f0691c994dc6bdbc80faedf07fe4.jpg",
+      "isCollection": true,
+      "year": "2020",
+      "relatedSkills": ["Brand & Visual Design"],
+      "hasDetailPage": true,
+      "link": "/pages/project-logos.html"
+    }
+  ]
+}
