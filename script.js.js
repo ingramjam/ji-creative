@@ -31,22 +31,9 @@ async function loadProjects() {
 
 function createProjectFilters(projects) {
     const filterContainer = document.getElementById('project-filters');
-    if (!filterContainer) {
-        // Create filter container if it doesn't exist
-        const portfolioSection = document.querySelector('.portfolio');
-        if (portfolioSection) {
-            const filterDiv = document.createElement('div');
-            filterDiv.id = 'project-filters';
-            filterDiv.className = 'project-filters';
-            filterDiv.style.cssText = 'display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 2rem; margin-top: 1rem;';
-            portfolioSection.insertBefore(filterDiv, document.getElementById('project-grid'));
-        }
-    }
+    if (!filterContainer) return;
     
-    const container = document.getElementById('project-filters');
-    if (!container) return;
-    
-    container.innerHTML = '';
+    filterContainer.innerHTML = '';
     
     // Get unique categories
     const categories = ['all', ...new Set(projects.map(p => p.category))];
@@ -76,8 +63,9 @@ function createProjectFilters(projects) {
             }
         });
         
-        container.appendChild(btn);
+        filterContainer.appendChild(btn);
     });
+}
 }
 
 function displayProjectBatch(projects) {
