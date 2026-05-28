@@ -1,0 +1,884 @@
+/* ============================================
+   Material Design Portfolio
+   James Ingram III | Creative Technologist
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #0d47a1;
+    --primary-light: #1565c0;
+    --primary-dark: #0d3a8c;
+    --accent: #00bcd4;
+    --accent-light: #4dd0e1;
+    --text-primary: #212121;
+    --text-secondary: #757575;
+    --text-disabled: #bdbdbd;
+    --bg-light: #fafafa;
+    --bg-white: #ffffff;
+    --bg-surface: #f5f5f5;
+    --border-color: #e0e0e0;
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: var(--bg-light);
+    color: var(--text-primary);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.myspace-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: white;
+    padding: 4rem 2rem;
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+    animation: slideInRight 0.6s ease-out;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    font-weight: 300;
+    letter-spacing: -1px;
+    margin-bottom: 0.5rem;
+}
+
+.header-tagline {
+    font-size: 1.1rem;
+    font-weight: 300;
+    opacity: 0.95;
+    letter-spacing: 0.5px;
+    animation: fadeIn 0.8s ease-out 0.3s both;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================ */
+
+.myspace-wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-light);
+}
+
+.myspace-container {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 2rem;
+    padding: 2.5rem;
+    max-width: 1800px;
+    margin: 0 auto;
+    width: 100%;
+    flex: 1;
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================ */
+
+.myspace-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+/* Profile Card */
+.profile-photo-box {
+    background: var(--bg-white);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    animation: fadeIn 0.6s ease-out 0.1s both;
+}
+
+.profile-photo-box:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.profile-photo {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Info Card */
+.info-box {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.info-box h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+}
+
+.status-line {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.online-status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--accent);
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.online-indicator {
+    width: 8px;
+    height: 8px;
+    background: var(--accent);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(0, 188, 212, 0.2);
+}
+
+/* Stats Box */
+.stats-box {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.6s ease-out 0.3s both;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 0.95rem;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.stat-value {
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.6s ease-out 0.4s both;
+}
+
+.contact-buttons h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.contact-btn {
+    display: block;
+    background: var(--bg-surface);
+    color: var(--primary);
+    padding: 0.85rem 1rem;
+    margin-bottom: 0.75rem;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(13, 71, 161, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.contact-btn:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: var(--shadow-sm);
+    border-color: var(--primary);
+}
+
+.contact-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.contact-btn:last-child {
+    margin-bottom: 0;
+}
+
+/* About Box */
+.about-box {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.6s ease-out 0.5s both;
+}
+
+.about-box h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.about-box p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
+/* Skills Box */
+.skills-box {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.6s ease-out 0.6s both;
+}
+
+.skills-box h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, rgba(13, 71, 161, 0.08), rgba(0, 188, 212, 0.08));
+    color: var(--primary);
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+    border: 1px solid rgba(13, 71, 161, 0.2);
+    transition: all 0.2s ease;
+}
+
+.skill-tag:hover {
+    background: linear-gradient(135deg, var(--primary), var(--accent));
+    color: white;
+    border-color: transparent;
+    box-shadow: var(--shadow-sm);
+}
+
+/* ============================================
+   MAIN CONTENT
+   ============================================ */
+
+.myspace-main {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Music Player */
+.music-player-box {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.7s ease-out 0.2s both;
+}
+
+.music-player-box h3 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.player-container {
+    background: var(--bg-surface);
+    padding: 1.5rem;
+    border-radius: 6px;
+}
+
+#audio-player {
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.player-info {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+.player-container iframe {
+    border-radius: 6px !important;
+    border: none !important;
+    box-shadow: var(--shadow-sm) !important;
+}
+
+/* Projects Section */
+.projects-section {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.7s ease-out 0.3s both;
+}
+
+.projects-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Filter Buttons */
+#project-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: var(--bg-surface);
+    color: var(--primary);
+    border: 1px solid var(--border-color);
+    padding: 0.7rem 1.2rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    border-radius: 20px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.filter-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(13, 71, 161, 0.1);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary);
+    box-shadow: var(--shadow-sm);
+}
+
+.filter-btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.filter-btn.active {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border-color: var(--primary);
+    box-shadow: var(--shadow-md);
+}
+
+/* Projects Grid */
+.myspace-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.myspace-project {
+    background: var(--bg-surface);
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    animation: fadeIn 0.6s ease-out;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--border-color);
+}
+
+.myspace-project:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-8px);
+    border-color: var(--accent);
+}
+
+.myspace-project img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--border-color);
+    transition: opacity 0.3s ease;
+}
+
+.myspace-project:hover img {
+    opacity: 0.9;
+}
+
+.myspace-project h3 {
+    color: var(--primary);
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 1rem 1rem 0.5rem;
+}
+
+.myspace-project p {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    padding: 0 1rem 1rem;
+    line-height: 1.5;
+}
+
+.myspace-project a {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.myspace-project a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.myspace-project a:hover {
+    background: var(--primary-dark);
+    box-shadow: var(--shadow-md);
+}
+
+.myspace-project a:hover::before {
+    width: 200px;
+    height: 200px;
+}
+
+.load-more-btn {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#load-more-projects {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    box-shadow: var(--shadow-md);
+}
+
+#load-more-projects::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+#load-more-projects:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+#load-more-projects:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+#load-more-projects:active {
+    transform: translateY(0);
+}
+
+/* Experience Section */
+.experience-section {
+    background: var(--bg-white);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.7s ease-out 0.4s both;
+}
+
+.experience-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.experience-item {
+    background: var(--bg-surface);
+    border-left: 4px solid var(--accent);
+    border-radius: 4px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.experience-item:hover {
+    border-left-color: var(--primary);
+    box-shadow: var(--shadow-md);
+    transform: translateX(4px);
+}
+
+.exp-header h3 {
+    color: var(--primary);
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.exp-title {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.exp-dates {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin: 0.75rem 0;
+    font-weight: 600;
+}
+
+.exp-details {
+    list-style: none;
+    padding-left: 0;
+}
+
+.exp-details li {
+    color: var(--text-secondary);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.5;
+}
+
+.exp-details li::before {
+    content: '•';
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+/* Resume CTA */
+.resume-cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    animation: fadeIn 0.7s ease-out 0.5s both;
+    box-shadow: var(--shadow-lg);
+}
+
+.resume-cta h3 {
+    font-size: 1.3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.myspace-btn-large {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 1rem 2.5rem;
+    border: 2px solid white;
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.myspace-btn-large::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.5s, height 0.5s;
+}
+
+.myspace-btn-large:hover {
+    background: white;
+    color: var(--primary);
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
+.myspace-btn-large:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+.myspace-footer {
+    background: var(--primary);
+    color: white;
+    padding: 2rem;
+    text-align: center;
+    margin-top: 2rem;
+    font-weight: 300;
+}
+
+.myspace-footer p {
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.footer-credit {
+    opacity: 0.8;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1200px) {
+    .myspace-container {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .myspace-projects {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .myspace-container {
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .header-content h1 {
+        font-size: 2rem;
+    }
+
+    .myspace-header {
+        padding: 2rem 1rem;
+    }
+
+    .myspace-projects {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .skills-box, .about-box {
+        display: none;
+    }
+
+    .projects-section,
+    .experience-section,
+    .resume-cta {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .myspace-container {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .header-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .header-tagline {
+        font-size: 0.95rem;
+    }
+
+    .myspace-projects {
+        grid-template-columns: 1fr;
+    }
+
+    #project-filters {
+        flex-direction: column;
+    }
+
+    .filter-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .projects-section,
+    .experience-section,
+    .resume-cta {
+        padding: 1rem;
+    }
+
+    .myspace-project h3 {
+        font-size: 0.95rem;
+    }
+
+    .myspace-btn-large,
+    #load-more-projects {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}

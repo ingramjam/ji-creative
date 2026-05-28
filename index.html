@@ -4,81 +4,155 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Ingram III | Creative Technologist</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style-modern.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
-<body>
-
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <a href="#home">JI</a>
+<body class="myspace-theme">
+    <div class="myspace-wrapper">
+        <!-- Header -->
+        <header class="myspace-header">
+            <div class="header-content">
+                <h1>✦ James Ingram III's Profile ✦</h1>
+                <p class="header-tagline">Creative Technologist • Designer • Developer</p>
             </div>
-            <ul class="nav-links">
-                <li><a href="#work">Work</a></li>
-                <li><a href="pages/resume.html">Resume</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li><a href="pages/resume.html" class="download-resume btn-small">Download PDF</a></li>
-            </ul>
+        </header>
+
+        <!-- Main Container -->
+        <div class="myspace-container">
+            <!-- Left Sidebar -->
+            <aside class="myspace-sidebar">
+                <!-- Profile Photo -->
+                <div class="profile-photo-box">
+                    <img src="me.jpeg" alt="James Ingram III" class="profile-photo">
+                </div>
+
+                <!-- Profile Info -->
+                <div class="info-box">
+                    <h2>James Ingram III</h2>
+                    <p class="status-line">Creative Technologist</p>
+                    <div class="online-status">
+                        <span class="online-indicator">●</span>
+                        <span>Online Now!</span>
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-box">
+                    <div class="stat-item">
+                        <span class="stat-label">Profile Views:</span>
+                        <span class="stat-value">∞</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Projects:</span>
+                        <span class="stat-value">23</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Location:</span>
+                        <span class="stat-value">San Diego</span>
+                    </div>
+                </div>
+
+                <!-- Contact Buttons -->
+                <div class="contact-buttons">
+                    <h3>✦ Contact Me ✦</h3>
+                    <a href="mailto:ingramjam@gmail.com" class="contact-btn">📧 Send Message</a>
+                    <a href="https://github.com/ingramjam" target="_blank" class="contact-btn">💻 GitHub</a>
+                    <a href="https://www.linkedin.com/in/ingramjam" target="_blank" class="contact-btn">🔗 LinkedIn</a>
+                    <a href="https://www.instagram.com/ingramjam" target="_blank" class="contact-btn">📸 Instagram</a>
+                </div>
+
+                <!-- About -->
+                <div class="about-box">
+                    <h3>✦ About Me ✦</h3>
+                    <p>Bridging visual design, front-end development, and AI-driven workflows. I design and build unified digital experiences, from comprehensive HubSpot platform migrations to custom data-management web applications.</p>
+                </div>
+
+                <!-- Skills -->
+                <div class="skills-box">
+                    <h3>✦ Core Skills ✦</h3>
+                    <div class="skills-grid">
+                        <span class="skill-tag">Web Design</span>
+                        <span class="skill-tag">HubSpot</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Figma</span>
+                        <span class="skill-tag">AI/ML</span>
+                        <span class="skill-tag">Branding</span>
+                        <span class="skill-tag">WordPress</span>
+                        <span class="skill-tag">Video</span>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="myspace-main">
+                <!-- Music Player -->
+                <section class="music-player-box">
+                    <h3>✦ Now Playing ✦</h3>
+                    <div class="player-container">
+                        <iframe data-testid="embed-iframe" style="border-radius:12px; width: 100%; border: 2px solid #0066cc;" src="https://open.spotify.com/embed/playlist/37i9dQZF1CKR37hoUTOLKt?utm_source=generator&theme=0" height="152" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+                    </div>
+                </section>
+
+                <!-- Featured Projects -->
+                <section class="projects-section">
+                    <h2>✦ Featured Portfolio ✦</h2>
+                    
+                    <div class="project-filters" id="project-filters">
+                        <!-- Filters populated by JavaScript -->
+                    </div>
+
+                    <div class="myspace-projects" id="projects-grid">
+                        <!-- Projects populated by JavaScript -->
+                    </div>
+
+                    <div class="load-more-btn">
+                        <button id="load-more-projects">Load More Projects →</button>
+                    </div>
+                </section>
+
+                <!-- Experience Section -->
+                <section class="experience-section">
+                    <h2>✦ Professional Experience ✦</h2>
+                    
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h3>JI Creative Design</h3>
+                            <span class="exp-title">Lead Creative Technologist & Consultant</span>
+                        </div>
+                        <p class="exp-dates">📍 Greater San Diego Area | Dec 2002 – Present</p>
+                        <ul class="exp-details">
+                            <li>Digital Transformation & Migration: Directed a massive digital infrastructure overhaul, successfully migrating multiple complex websites, databases, and hosting environments from WordPress to the HubSpot platform.</li>
+                            <li>Brand & Web Launch: Architected, built, and launched four distinct brand websites simultaneously, engineering custom HubSpot modules.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item">
+                        <div class="exp-header">
+                            <h3>Moores Cancer Center</h3>
+                            <span class="exp-title">Creative Technologist (Digital Media Specialist)</span>
+                        </div>
+                        <p class="exp-dates">📍 San Diego, CA | Nov 2020 – Present</p>
+                        <ul class="exp-details">
+                            <li>Systems Design & Communication Strategy: Evolved digital communication channels by designing and implementing robust, integrated web-based systems.</li>
+                            <li>Workflow Optimization: Reduced system runtime and improved operational efficiency by integrating optimized digital audio, video, and multimedia platforms.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- View Resume CTA -->
+                <section class="resume-cta">
+                    <h3>Want More?</h3>
+                    <a href="pages/resume.html" class="myspace-btn-large">📄 View Full Resume →</a>
+                </section>
+            </main>
         </div>
-    </nav>
 
-    <header class="hero">
-        <div class="hero-content">
-            <h1>James Ingram III</h1>
-            <p class="subtitle">Creative Technologist</p>
-            <p class="description">Bridging visual design, front-end development, and AI-driven workflows. I design and build unified digital experiences, from comprehensive HubSpot platform migrations to custom data-management web applications.</p>
-            <a href="#work" class="btn btn-primary">View My Work</a>
-        </div>
-    </header>
-
-    <main>
-        <section id="work" class="portfolio">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Featured Projects</h2>
-                    <p>Recent developments, app builds, and design systems</p>
-                </div>
-                
-                <!-- Project filters -->
-                <div class="project-filters" id="project-filters">
-                    <!-- Filter buttons loaded by JavaScript -->
-                </div>
-                
-                <div class="projects-grid" id="project-grid">
-                    <!-- Projects loaded by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="resume" class="resume-section">
-            <div class="container">
-                <div class="section-header">
-                    <h2>Experience & Capabilities</h2>
-                    <p><a href="pages/resume.html" class="text-link">View full interactive resume →</a></p>
-                </div>
-                <div class="resume-preview" id="resume-preview">
-                    <!-- Resume preview loaded by JavaScript -->
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="contact">
-            <div class="contact-content">
-                <h2>Let's Work Together</h2>
-                <p>Open to new opportunities in design, development, and emerging technology.</p>
-                <div class="contact-links">
-                    <a href="mailto:ingramjam@gmail.com" class="btn btn-primary">Email Me</a>
-                    <a href="https://www.linkedin.com/in/ingramjam" target="_blank" class="btn btn-secondary">LinkedIn</a>
-                    <a href="https://github.com/ingramjam" target="_blank" class="btn btn-secondary">GitHub</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 James Ingram III. Designed and built with code.</p>
-    </footer>
+        <!-- Footer -->
+        <footer class="myspace-footer">
+            <p>© 2026 James Ingram III | Designed & Built with Code</p>
+            <p class="footer-credit">MySpace Profile Style • Powered by HTML5 & CSS3</p>
+        </footer>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
     <script src="script.js.js"></script>

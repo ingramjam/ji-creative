@@ -1,0 +1,11 @@
+<svg width="300" height="300" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="profileGrad">
+      <stop offset="0%" style="stop-color:#00ff00;stop-opacity:0.3" />
+      <stop offset="100%" style="stop-color:#00ff00;stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <rect width="300" height="300" fill="#000000"/>
+  <circle cx="150" cy="150" r="150" fill="url(#profileGrad)"/>
+  <text x="150" y="200" font-family="Arial" font-size="32" fill="#00ff00" text-anchor="middle" font-weight="bold">JI</text>
+</svg>

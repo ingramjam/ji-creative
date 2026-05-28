@@ -11,7 +11,7 @@ async function loadProjects() {
         allProjects = data.projects;
         currentProjects = [...allProjects];  // Initialize with all projects
         
-        const projectGrid = document.getElementById('project-grid');
+        const projectGrid = document.getElementById('projects-grid');
         if (!projectGrid) return;
         
         projectGrid.innerHTML = '';
@@ -23,8 +23,8 @@ async function loadProjects() {
         displayedCount = 0;
         displayProjectBatch(currentProjects);
         
-        // Setup infinite scroll
-        setupInfiniteScroll();
+        // Setup load more button
+        setupLoadMoreButton();
         
     } catch (error) {
         console.error('Error loading projects:', error);
@@ -70,7 +70,7 @@ function createProjectFilters(projects) {
 }
 
 function displayProjectBatch(projects) {
-    const projectGrid = document.getElementById('project-grid');
+    const projectGrid = document.getElementById('projects-grid');
     
     // Clear grid if this is the first batch for a filter
     if (displayedCount === 0) {
@@ -81,25 +81,23 @@ function displayProjectBatch(projects) {
     
     batch.forEach(project => {
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'myspace-project';
         card.style.opacity = '0';
         card.style.transform = 'translateY(20px)';
         card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
         
         let cardHTML = `
-            <img src="${project.image}" alt="${project.title}" onerror="this.style.backgroundColor='#d3d3d3'; this.style.objectFit='cover';">
-            <div class="card-content">
-                <h3>${project.title}</h3>
-                <p>${project.description}</p>
+            <img src="${project.image}" alt="${project.title}" onerror="this.style.backgroundColor='#4d4d73'; this.style.objectFit='cover';">
+            <h3>${project.title}</h3>
+            <p>${project.description}</p>
         `;
         
         if (project.hasDetailPage && project.link) {
-            cardHTML += `<a href="${project.link}" class="text-link">View Project →</a>`;
+            cardHTML += `<a href="${project.link}">View Project →</a>`;
         } else {
-            cardHTML += `<a href="javascript:void(0)" class="text-link">View Details →</a>`;
+            cardHTML += `<a href="javascript:void(0)">View Details →</a>`;
         }
         
-        cardHTML += `</div>`;
         card.innerHTML = cardHTML;
         projectGrid.appendChild(card);
         
@@ -113,22 +111,18 @@ function displayProjectBatch(projects) {
     displayedCount += batch.length;
 }
 
-function setupInfiniteScroll() {
-    const projectGrid = document.getElementById('project-grid');
-    if (!projectGrid) return;
+function setupLoadMoreButton() {
+    const loadMoreBtn = document.getElementById('load-more-projects');
+    if (!loadMoreBtn) return;
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Load more projects when we reach the end
-                if (displayedCount < currentProjects.length) {
-                    displayProjectBatch(currentProjects);
-                }
-            }
-        });
+    loadMoreBtn.addEventListener('click', () => {
+        if (displayedCount < currentProjects.length) {
+            displayProjectBatch(currentProjects);
+        } else {
+            loadMoreBtn.textContent = 'All Projects Loaded!';
+            loadMoreBtn.disabled = true;
+        }
     });
-    
-    observer.observe(projectGrid);
 }
 
 // Expand project (placeholder for inline projects)
